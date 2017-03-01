@@ -8,7 +8,7 @@ namespace SQLiteApp
         {
             InitializeComponent();
 
-            MainPage = new SQLiteAppPage();
+            MainPage = new SQLiteAppView();
         }
 
         protected override void OnStart()
