@@ -1,5 +1,6 @@
 ﻿using System;
 using SQLiteApp.DependencyService;
+using System.IO;
 
 namespace SQLiteApp.iOS.DependencyDataBaseServise
 {
@@ -7,7 +8,11 @@ namespace SQLiteApp.iOS.DependencyDataBaseServise
     {
         public string GetDatabasePath(string filename)
         {
-            throw new NotImplementedException();
+            string docpath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string library = Path.Combine(docpath, "...", "Library");
+            var path = Path.Combine(library, filename);
+
+            return path;
         }
     }
 }
