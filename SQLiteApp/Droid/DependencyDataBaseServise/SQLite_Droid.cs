@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using SQLiteApp.DependencyService;
 
 namespace SQLiteApp.Droid.DependencyDataBaseServise
@@ -7,7 +8,10 @@ namespace SQLiteApp.Droid.DependencyDataBaseServise
     {
         public string GetDatabasePath(string filename)
         {
-            throw new NotImplementedException();
+            string docpath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var path = Path.Combine(docpath, filename);
+
+            return path;
         }
     }
 }
