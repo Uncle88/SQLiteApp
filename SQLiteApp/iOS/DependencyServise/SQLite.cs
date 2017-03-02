@@ -2,10 +2,15 @@
 using SQLiteApp.DependencyService;
 using System.IO;
 
-namespace SQLiteApp.iOS.DependencyDataBaseServise
+
+[assembly: Xamarin.Forms.Dependency(typeof(SQLiteApp.iOS.DependencyServise.SQLite))]
+
+namespace SQLiteApp.iOS.DependencyServise
 {
-    public class SQLite_iOS : ISQLite
+    public class SQLite : ISQLite
     {
+        public SQLite() { }
+
         public string GetDatabasePath(string filename)
         {
             string docpath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

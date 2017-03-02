@@ -1,8 +1,8 @@
-﻿using System;
-using SQLite.Net.Attributes;
+﻿using SQLite.Net.Attributes;
 
 namespace SQLiteApp.Model
 {
+    [Table("Market")]
     public class Market
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
