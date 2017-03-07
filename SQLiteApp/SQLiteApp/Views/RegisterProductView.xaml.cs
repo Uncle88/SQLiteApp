@@ -28,7 +28,7 @@ namespace SQLiteApp
 
         public void Showdata(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync((Xamarin.Forms.Page)new ListProductView());
+            Navigation.PushModalAsync(new ListProduct());
         }
     }
 }

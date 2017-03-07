@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLiteApp.Views.ListProduct">
+    <ListView x:Name="ListProductView" IsVisible="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="10">
+						<Grid BackgroundColor="Lime">
+							<StackLayout >
+								<Label Text="{Binding Name}" Font="20"/>
+								<Label Text="{Binding Manufacturer}" Font="20"/>
+								<Label Text="{Binding Price}" Font="20"/>
+							</StackLayout>
+						</Grid>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

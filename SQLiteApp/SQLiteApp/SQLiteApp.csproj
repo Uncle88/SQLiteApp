@@ -30,7 +30,7 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="Views\RegisterProductView.xaml" />
-    <EmbeddedResource Include="Views\ListProductView.xaml">
+    <EmbeddedResource Include="Views\ListProduct.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -45,8 +45,8 @@
     <Compile Include="Model\Market.cs" />
     <Compile Include="MarketOperation.cs" />
     <Compile Include="Database\ISQLite.cs" />
-    <Compile Include="Views\ListProductView.xaml.cs">
-      <DependentUpon>ListProductView.xaml</DependentUpon>
+    <Compile Include="Views\ListProduct.xaml.cs">
+      <DependentUpon>ListProduct.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
