@@ -1,27 +1,52 @@
-﻿using SQLite.Net;
-using SQLiteApp.DependencyService;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SQLite.Net;
+using SQLiteApp.Database;
 using SQLiteApp.Model;
 using Xamarin.Forms;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+
 
 namespace SQLiteApp
 {
     public class MarketOperation
     {
-        public MarketOperation() { }
+        private SQLiteConnection _sqliteConnection;
 
-        SQLiteConnection database;
-
-        public MarketOperation(string filename)
+        public MarketOperation()
         {
-            string databasePath = DependencyService.Get<ISQLite>().GetDatabasePath(filename);
-            database = new SQLiteConnection(databasePath);
-            database.CreateTable<Market>();
+            //string databasePath = DependencyService.Get<ISQLite>().GetDatabasePath(filename);
+            //database = new SQLiteConnection(databasePath);
+            //database.CreateTable<Market>();
+            _sqliteConnection = DependencyService.Get<ISQLite>().GetDatabasePath();
+            _sqliteConnection.CreateTable<Market>();
         }
 
+        public IEnumerable<Market> GetItems()
+        {
+            return (from i in _sqliteConnection.Table<Market>() select i).ToList();
+        }
 
+        public Market GetProduct(int id)
+        {
+            return _sqliteConnection.Get<Market>(id);
+        }
+
+        public int DeleteProduct(int id)
+        {
+            return _sqliteConnection.Delete<Market>(id);
+        }
+
+        public int SaveProduct(Market item)
+        {
+            if (item.Id != 0)
+            {
+                _sqliteConnection.Update(item);
+                return item.Id;
+            }
+            else
+            {
+                return _sqliteConnection.Insert(item);
+            }
+        }
     }
 }
