@@ -29,19 +29,25 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="Views\SQLiteAppView.xaml" />
+    <EmbeddedResource Include="Views\RegisterProductView.xaml" />
+    <EmbeddedResource Include="Views\ListProductView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\SQLiteAppView.xaml.cs">
-      <DependentUpon>SQLiteAppView.xaml</DependentUpon>
+    <Compile Include="Views\RegisterProductView.xaml.cs">
+      <DependentUpon>RegisterProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Market.cs" />
     <Compile Include="MarketOperation.cs" />
     <Compile Include="Database\ISQLite.cs" />
+    <Compile Include="Views\ListProductView.xaml.cs">
+      <DependentUpon>ListProductView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
