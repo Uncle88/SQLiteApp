@@ -14,9 +14,6 @@ namespace SQLiteApp
 
         public MarketOperation()
         {
-            //string databasePath = DependencyService.Get<ISQLite>().GetDatabasePath(filename);
-            //database = new SQLiteConnection(databasePath);
-            //database.CreateTable<Market>();
             _sqliteConnection = DependencyService.Get<ISQLite>().GetDatabasePath();
             _sqliteConnection.CreateTable<Market>();
         }
@@ -31,9 +28,9 @@ namespace SQLiteApp
             return _sqliteConnection.Get<Market>(id);
         }
 
-        public int DeleteProduct(int id)
+        public int DeleteProduct(Market item)
         {
-            return _sqliteConnection.Delete<Market>(id);
+            return _sqliteConnection.Delete<Market>(item);
         }
 
         public int SaveProduct(Market item)

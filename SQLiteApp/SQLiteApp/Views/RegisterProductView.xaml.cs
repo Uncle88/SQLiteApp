@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using System.Diagnostics.Contracts;
 using SQLiteApp.Model;
 using System;
 using SQLiteApp.Views;
@@ -23,6 +22,7 @@ namespace SQLiteApp
             _market.Name = name.Text;
             _market.Manufacturer = manufacturer.Text;
             _market.Price = price.Text;
+            _market.Id++;
             _marketOperation.SaveProduct(_market);
         }
 

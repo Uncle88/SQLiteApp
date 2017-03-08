@@ -1,20 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLiteApp.Views.ListProduct">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SQLiteApp.Views.ListProduct">
     <ListView x:Name="ListProductView" IsVisible="true">
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="10">
-						<Grid BackgroundColor="Lime">
-							<StackLayout >
-								<Label Text="{Binding Name}" Font="20"/>
-								<Label Text="{Binding Manufacturer}" Font="20"/>
-								<Label Text="{Binding Price}" Font="20"/>
-							</StackLayout>
-						</Grid>
-					</StackLayout>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Grid BackgroundColor="Lime">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" Font="20"/>
+                                <Label Text="{Binding Manufacturer}"/>
+                                <Label Text="{Binding Price}"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SQLiteApp.Views.ListProduct">
+	<ListView x:Name="ListProductView" IsVisible="true">
+<ListView.ItemTemplate>  
+            <DataTemplate>  
+               <ViewCell>  
+                  <ViewCell.View>  
+                     <StackLayout Orientation="Horizontal">  
+                        <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" FontSize="30"/> 
+                        <Label Text="{Binding Manufacturer}"/>
+                        <Label Text="{Binding Price}"/>
+                        <Button Text="Delete" CommandParameter="{Binding ItemName}" Clicked="DeleteClicked">        
+                        </Button>  
+                     </StackLayout>  
+                  </ViewCell.View>  
+               </ViewCell>  
+            </DataTemplate>  
+         </ListView.ItemTemplate> 
+		</ListView>
+    </ContentPage> -->
+
+
+ 
+
