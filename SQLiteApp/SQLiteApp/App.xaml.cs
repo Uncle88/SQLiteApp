@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using SQLiteApp.Model;
+using SQLiteApp.Views;
 
 namespace SQLiteApp
 {
@@ -8,7 +10,7 @@ namespace SQLiteApp
         {
             InitializeComponent();
 
-            MainPage = new RegisterProductView();
+            MainPage = new NavigationPage(new MarketListView());
         }
 
         protected override void OnStart()
