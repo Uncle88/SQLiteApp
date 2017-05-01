@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SQLiteApp" x:Class="SQLiteApp.MarketView">
+   <StackLayout>
+    <StackLayout x:Name="Stack">
+      <Label Text="Name" />
+      <Entry Text="{Binding Name}" FontSize="Medium" />
+      <Label Text="Manufacturer" />
+      <Entry Text="{Binding Manufacturer}" FontSize="Medium" />
+      <Label Text="Price" />
+      <Entry Text="{Binding Price}" FontSize="Medium" />
+    </StackLayout>
+    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+      <Button Text="Save" Command="{Binding marketListViewModel.SaveMarketCommand}" CommandParameter="{Binding}" />
+      <Button Text="Delete" Command="{Binding marketListViewModel.DeleteMarketCommand}"  CommandParameter="{Binding}"/>
+      <Button Text="Back" Command="{Binding Path=marketListViewModel.BackCommand}" />
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
